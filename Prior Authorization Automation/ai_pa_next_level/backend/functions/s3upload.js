@@ -1,0 +1,1 @@
+exports.upload=async()=>({statusCode:200, body:'upload ok'})

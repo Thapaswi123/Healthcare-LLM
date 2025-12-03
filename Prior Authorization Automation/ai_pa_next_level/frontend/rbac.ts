@@ -1,0 +1,1 @@
+export const canAccess=(role,page)=>true

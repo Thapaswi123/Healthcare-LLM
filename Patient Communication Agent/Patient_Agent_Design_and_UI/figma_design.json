@@ -1,0 +1,58 @@
+{
+  "version": "1.0",
+  "components": [
+    {
+      "name": "ChatTextField",
+      "type": "input",
+      "props": {
+        "placeholder": "Type your message"
+      }
+    },
+    {
+      "name": "SendButton",
+      "type": "button",
+      "props": {
+        "label": "Send"
+      }
+    },
+    {
+      "name": "MessageBubblePatient",
+      "type": "bubble",
+      "props": {
+        "background": "#DCF8C6"
+      }
+    },
+    {
+      "name": "MessageBubbleAgent",
+      "type": "bubble",
+      "props": {
+        "background": "#E6E6E6"
+      }
+    },
+    {
+      "name": "TopNavBar",
+      "type": "navbar",
+      "props": {
+        "title": "Patient Assistant"
+      }
+    }
+  ],
+  "screens": [
+    {
+      "name": "Home Screen",
+      "file": "home_screen.png"
+    },
+    {
+      "name": "Chat UI",
+      "file": "chat_ui.png"
+    },
+    {
+      "name": "Message History",
+      "file": "message_history.png"
+    },
+    {
+      "name": "Patient Profile",
+      "file": "patient_profile.png"
+    }
+  ]
+}

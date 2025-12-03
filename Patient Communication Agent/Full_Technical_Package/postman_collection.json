@@ -1,0 +1,35 @@
+{
+  "info": {
+    "name": "Patient Communication Agent API",
+    "_postman_id": "001",
+    "schema": "https://schema.getpostman.com"
+  },
+  "item": [
+    {
+      "name": "Send Message",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/messages",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "messages"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"patient_id\": \"P001\", \"text\": \"Hello\"}"
+        }
+      }
+    }
+  ]
+}

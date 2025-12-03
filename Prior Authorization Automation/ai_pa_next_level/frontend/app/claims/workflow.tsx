@@ -1,0 +1,1 @@
+export default function C(){return(<div>Claims Workflow</div>)}

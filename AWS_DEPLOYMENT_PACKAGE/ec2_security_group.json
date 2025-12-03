@@ -1,0 +1,83 @@
+{
+  "Description": "Security Group for Healthcare LLM Applications",
+  "GroupName": "healthcare-llm-sg",
+  "IpPermissions": [
+    {
+      "IpProtocol": "tcp",
+      "FromPort": 22,
+      "ToPort": 22,
+      "IpRanges": [
+        {
+          "CidrIp": "0.0.0.0/0",
+          "Description": "SSH access - RESTRICT TO YOUR IP IN PRODUCTION"
+        }
+      ]
+    },
+    {
+      "IpProtocol": "tcp",
+      "FromPort": 80,
+      "ToPort": 80,
+      "IpRanges": [
+        {
+          "CidrIp": "0.0.0.0/0",
+          "Description": "HTTP access"
+        }
+      ]
+    },
+    {
+      "IpProtocol": "tcp",
+      "FromPort": 443,
+      "ToPort": 443,
+      "IpRanges": [
+        {
+          "CidrIp": "0.0.0.0/0",
+          "Description": "HTTPS access"
+        }
+      ]
+    },
+    {
+      "IpProtocol": "tcp",
+      "FromPort": 3000,
+      "ToPort": 3000,
+      "IpRanges": [
+        {
+          "CidrIp": "0.0.0.0/0",
+          "Description": "AI Clinical Co-Pilot"
+        }
+      ]
+    },
+    {
+      "IpProtocol": "tcp",
+      "FromPort": 3001,
+      "ToPort": 3001,
+      "IpRanges": [
+        {
+          "CidrIp": "0.0.0.0/0",
+          "Description": "Prior Authorization"
+        }
+      ]
+    },
+    {
+      "IpProtocol": "tcp",
+      "FromPort": 3005,
+      "ToPort": 3005,
+      "IpRanges": [
+        {
+          "CidrIp": "0.0.0.0/0",
+          "Description": "Medication Safety"
+        }
+      ]
+    },
+    {
+      "IpProtocol": "tcp",
+      "FromPort": 3006,
+      "ToPort": 3006,
+      "IpRanges": [
+        {
+          "CidrIp": "0.0.0.0/0",
+          "Description": "Patient Communication"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+<mxfile>
+ <diagram name="UML">
+   <mxGraphModel>
+     <root>
+       <mxCell id="1"/>
+       <mxCell id="2" value="Patient" vertex="1">
+         <mxGeometry x="40" y="40" width="160" height="80" as="geometry"/>
+       </mxCell>
+     </root>
+   </mxGraphModel>
+ </diagram>
+</mxfile>

@@ -1,0 +1,32 @@
+
+service: ai-pa
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+
+functions:
+  login:
+    handler: functions/auth.login
+    events: 
+      - httpApi: { path: /auth/login, method: post }
+
+  processPriorAuth:
+    handler: functions/priorAuth.handler
+    events:
+      - httpApi: { path: /prior-auth, method: post }
+
+  processClaims:
+    handler: functions/claims.handler
+    events:
+      - httpApi: { path: /claims, method: post }
+
+  ehrSimulator:
+    handler: functions/ehr.handler
+    events:
+      - httpApi: { path: /ehr, method: get }
+
+  auditLogger:
+    handler: functions/audit.handler
+    events:
+      - httpApi: { path: /audit, method: post }

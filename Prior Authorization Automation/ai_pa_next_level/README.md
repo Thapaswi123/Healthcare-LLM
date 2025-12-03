@@ -1,0 +1,1 @@
+Next level modules scaffold with DynamoDB, OpenAI, S3, workflows, RBAC, React Query.

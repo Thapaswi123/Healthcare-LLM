@@ -1,0 +1,21 @@
+
+service: ai-pa-backend
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+
+functions:
+  processPriorAuth:
+    handler: functions/processPriorAuth.handler
+    events:
+      - httpApi:
+          path: /prior-auth
+          method: post
+
+  ehrSimulator:
+    handler: functions/ehrSimulator.handler
+    events:
+      - httpApi:
+          path: /ehr
+          method: get
