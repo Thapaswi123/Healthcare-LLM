@@ -95,13 +95,13 @@ export default function Home() {
               >
                 <h3 style={{fontSize:'18px',marginBottom:'15px',fontWeight:'600'}}>Patient Communication Agent</h3>
                 <p style={{fontSize:'14px',color:'#8b9dc3',lineHeight:'1.6'}}>
-                  Safe, triage-aware chat interface for common patient questions and symptom guidance.
+                  Safe, triage-aware chat interface for common patient questions and symptom guidance. (BRD-Compliant)
                 </p>
               </div>
 
               {/* Module 4: Prior Authorization & Claims */}
               <div 
-                onClick={() => window.open('http://localhost:3001', '_blank')}
+                onClick={() => window.open('http://3.227.251.11:3000', '_blank')}
                 style={{
                   backgroundColor:'#132f4c',
                   border:'1px solid #1e3a5f',
@@ -467,6 +467,22 @@ function PatientCommunicationModule({ onBack }: { onBack: () => void }) {
       </button>
       
       <h2 style={{fontSize:'32px',marginBottom:'30px'}}>Patient Communication Agent</h2>
+      
+      {/* Video Chat Option */}
+      <div style={{backgroundColor:'#132f4c',padding:'20px',borderRadius:'8px',border:'1px solid #1e3a5f',marginBottom:'20px'}}>
+        <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+          <div>
+            <h3 style={{fontSize:'18px',marginBottom:'5px'}}>🎥 Video Consultation Available</h3>
+            <p style={{fontSize:'14px',color:'#8b9dc3'}}>Connect with healthcare providers via secure video chat</p>
+          </div>
+          <button
+            onClick={() => window.open('/video-chat', '_blank')}
+            style={{padding:'12px 24px',backgroundColor:'#16a34a',color:'white',border:'none',borderRadius:'4px',cursor:'pointer',fontSize:'14px',fontWeight:'600'}}
+          >
+            Start Video Chat
+          </button>
+        </div>
+      </div>
       
       <div style={{backgroundColor:'#132f4c',padding:'30px',borderRadius:'8px',border:'1px solid #1e3a5f',minHeight:'500px',display:'flex',flexDirection:'column'}}>
         <div style={{flex:1,overflowY:'auto',marginBottom:'20px'}}>

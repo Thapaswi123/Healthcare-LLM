@@ -29,6 +29,10 @@ export default function PA(){
       if (data.success) {
         setRequestId(data.priorAuth.id)
         setSubmitted(true)
+        
+        // Show success message with claim info
+        alert(`✅ Success!\n\nPrior Authorization: ${data.priorAuth.id}\nClaim Created: ${data.claim.id}\n\nYou can view the claim in "View Claims" page.`)
+        
         setTimeout(() => {
           setSubmitted(false)
           setFormData({patientName:'',patientId:'',procedure:'',diagnosis:'',urgency:'routine'})
@@ -107,7 +111,11 @@ export default function PA(){
         <div style={{padding:'15px',backgroundColor:'#d4edda',color:'#155724',borderRadius:'4px',marginBottom:'20px'}}>
           ✅ Prior authorization request submitted successfully!<br/>
           <strong>Request ID: {requestId}</strong><br/>
-          Status: {formData.urgency === 'emergency' ? 'Auto-Approved' : 'Under Review'}
+          Status: {formData.urgency === 'emergency' ? 'Auto-Approved' : 'Under Review'}<br/>
+          <br/>
+          <a href="/claims" style={{display:'inline-block',marginTop:'10px',padding:'8px 16px',backgroundColor:'#155724',color:'white',textDecoration:'none',borderRadius:'4px',fontSize:'14px'}}>
+            View in Claims →
+          </a>
         </div>
       )}
       

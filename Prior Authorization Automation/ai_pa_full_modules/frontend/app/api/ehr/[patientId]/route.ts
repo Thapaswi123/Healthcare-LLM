@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server'
+import { dataStore } from '../../../../lib/dataStore'
 
 // Mock EHR database
-const patients = {
+const patients: Record<string, any> = {
   'P001': {
     id: 'P001',
     name: 'John Doe',
@@ -43,7 +44,50 @@ export async function GET(
 ) {
   try {
     const patientId = params.patientId
-    const patient = patients[patientId as keyof typeof patients]
+    
+    // First check static patients
+    let patient = patients[patientId]
+    
+    // If not found, check dynamically created patients from Prior Auth
+    if (!patient) {
+      // Look for patient in claims
+      const claim = dataStore.claims.find(c => c.patientId === patientId)
+      
+      if (claim) {
+        // Create patient record from claim data
+        patient = {
+          id: claim.patientId,
+          name: claim.patient,
+          age: 'N/A',
+          gender: 'N/A',
+          diagnosis: claim.procedure || 'N/A',
+          medications: [],
+          allergies: [],
+          lastVisit: claim.date,
+          insurance: 'N/A'
+        }
+      }
+      
+      // Also check priorAuths for more complete data
+      const priorAuth = dataStore.priorAuths.find(pa => pa.patientId === patientId)
+      
+      if (priorAuth) {
+        patient = {
+          id: priorAuth.patientId,
+          name: priorAuth.patientName,
+          age: 'N/A',
+          gender: 'N/A',
+          diagnosis: priorAuth.diagnosis,
+          medications: [],
+          allergies: [],
+          lastVisit: priorAuth.submittedDate,
+          insurance: 'N/A',
+          procedure: priorAuth.procedure,
+          urgency: priorAuth.urgency,
+          status: priorAuth.status
+        }
+      }
+    }
 
     if (!patient) {
       return NextResponse.json(

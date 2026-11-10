@@ -9,6 +9,7 @@ export default function Home() {
         <ul style={{ fontSize: '18px', lineHeight: '2' }}>
           <li><a href="/dashboard" style={{ color: '#0070f3' }}>📊 Dashboard</a></li>
           <li><a href="/claims" style={{ color: '#0070f3' }}>📝 Claims Management</a></li>
+          <li><a href="/claims-workflow" style={{ color: '#0070f3', fontWeight: 'bold' }}>🔄 Medical Claims Workflow (End-to-End)</a></li>
           <li><a href="/ehr-sim" style={{ color: '#0070f3' }}>🏥 EHR Simulator</a></li>
           <li><a href="/login" style={{ color: '#0070f3' }}>🔐 Login</a></li>
           <li><a href="/prior-auth" style={{ color: '#0070f3' }}>📋 Prior Authorization</a></li>
@@ -20,6 +21,7 @@ export default function Home() {
         <ul>
           <li>✅ Dashboard with analytics</li>
           <li>✅ Claims processing and management</li>
+          <li>✅ End-to-End Medical Claims Workflow (8 Steps)</li>
           <li>✅ EHR system simulator</li>
           <li>✅ User authentication (JWT)</li>
           <li>✅ Prior authorization workflow</li>

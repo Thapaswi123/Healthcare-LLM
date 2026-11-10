@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3004",
+    "dev": "next dev -p 3004 -H 0.0.0.0",
     "build": "next build",
     "start": "next start"
   },
@@ -13,7 +13,9 @@
     "react-dom": "18.2.0",
     "@mui/material": "5.15.0",
     "@mui/icons-material": "5.15.0",
-    "axios": "1.6.0"
+    "axios": "1.6.0",
+    "livekit-client": "^2.0.0",
+    "livekit-server-sdk": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "20.10.0",
